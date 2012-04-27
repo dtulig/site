@@ -1,0 +1,42 @@
+--- 
+layout: post
+title: "The HTML5 DOM Element API: Dataset"
+published: true
+---
+<p>Datasets are one of the new Element features added with the HTML5 spec. They allow you to add arbitrary attributes to DOM Elements that can be easily accessed and modified via JavaScript. These attributes are great for adding additional information for projects such as photo galleries that can use the attributes to enhance the display.</p>
+
+<h2>Using data attributes on elements</h2>
+
+<p>Datasets are added to an element via element attributes. A dataset attribute is prefixed by <code>data-</code> and followed by the name. For example, <code>data-author</code>.</p>
+
+<p>For this post, we are going to use a photo gallery as an example of when you might want to use datasets to add additional markup to your HTML. To start, let us create the first <code>div</code> with attributes that define the author, location, and date of the photo. Here is the markup:</p>
+
+<p><script src="https://gist.github.com/1294430.js"></script></p>
+
+<p>As you can see, the three items we want in the dataset are prefixed by <code>data-</code> and are assigned a value the same way as any other HTML attribute.</p>
+
+<h2>Accessing an element&rsquo;s dataset</h2>
+
+<p>To access the dataset of an element, simply use the attribute <code>dataset</code>. Here is a quick example.</p>
+
+<p><script src="https://gist.github.com/1294438.js"></script></p>
+
+<p>The <code>dataset</code> attribute returns a <a href="https://developer.mozilla.org/en/DOM/DOMStringMap">DOMStringMap</a>, a new datatype added for datasets. Note: hyphenated attribute names are turned into camel case for JavaScript access.</p>
+
+<h2>Modifying and removing an element&rsquo;s dataset</h2>
+
+<p>Modifying an item in the dataset is very easy, just assign the property in the dataset a new value.</p>
+
+<p><script src="https://gist.github.com/1294440.js"></script></p>
+
+<p>Deleting is equally easy, just use the keyword <code>delete</code> and specify the property of the dataset to delete.</p>
+
+<p><script src="https://gist.github.com/1294441.js"></script></p>
+
+<h2>Using data attributes with CSS</h2>
+
+<p>Like other HTML Element attributes, dataset attributes can be used as part of CSS selectors. Adding a blue background to all divs with Dave as the author looks like the following:</p>
+
+<p><script src="https://gist.github.com/1294516.js"></script></p>
+
+<p>Datasets provide an easy way to associate little bits of meta data with your HTML tags and allows easy access from your JavaScript. For more intensive JavaScript applications you will still be better off using JavaScript objects to hold your state. However, for quick projects like a photo gallery, dataset attributes provide easy access to additional data for each element. As far as browser support, here is the <a href="http://caniuse.com/#search=dataset">caniuse</a> page.</p>

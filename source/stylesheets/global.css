@@ -83,3 +83,7 @@ code, pre {
     padding: 0 .4em 0 .2em;
     display: inline-block;
 }
+
+article h2 {
+    margin: 20px 0 9px;
+}

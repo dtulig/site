@@ -67,7 +67,8 @@ p.meta + .sharing {
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') top left repeat-x;
 }
 
-div#content,
+body,
+body p,
 div#content p {
     font-size: 15px;
     line-height: 1.5em;

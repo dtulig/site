@@ -1,0 +1,69 @@
+article header p {
+    color: #AAA;
+}
+
+article header {
+    margin-bottom: 1em;
+    position: relative;
+    padding-top: 2em;
+}
+
+article header p.meta {
+    position: absolute;
+    text-transform: uppercase;
+    top: 0;
+}
+
+#content .blog-index article {
+    border-bottom: 1px dotted #999;
+}
+
+#content article {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+div.pager {
+    padding-top: 2em;
+}
+
+p.footer {
+    padding: 1em 0 2em;
+    font-size: 0.9em;
+}
+
+aside.sidebar ul {
+    margin: 0;
+    padding: 0;
+}
+
+aside.sidebar li {
+    list-style: none;
+    padding: .5em 0;
+    margin: 0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+aside.sidebar {
+    padding-top: 4em;
+}
+
+.navbar-inner {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+}
+    
+article > footer {
+    padding-bottom: 2.5em;
+    margin-top: 2em;
+}
+
+article > footer p.meta {
+    margin-bottom: .8em;
+    font-size: 85.em;
+}
+
+p.meta + .sharing {
+    padding: 1em 0 0.5em;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') top left repeat-x;
+}

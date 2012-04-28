@@ -2,8 +2,8 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://www.davidtulig.com
-title: David Tulig''s Blog
+url: http://dtulig.github.com
+title: "David Tulig's Blog"
 subtitle: A blogging framework for hackers.
 author: David Tulig
 simple_search: http://google.com/search

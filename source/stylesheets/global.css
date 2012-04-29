@@ -87,3 +87,17 @@ code, pre {
 article h2 {
     margin: 20px 0 9px;
 }
+
+aside > section {
+    margin-bottom: 20px;
+}
+
+
+aside > section.googleplus {
+    margin-bottom: 0;
+}
+
+aside > section.googleplus h1,
+aside > section.linkedin h1 {
+    font-size: 15px;
+}

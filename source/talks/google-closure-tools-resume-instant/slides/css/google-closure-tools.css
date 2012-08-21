@@ -1,0 +1,249 @@
+.deck-container {
+    font-family: "Helvetica Neue", "Helvetica", Calibri, sans-serif;
+}
+
+.deck-container .slide h1 {
+    font-size: 5.2em;
+}
+
+.csstransforms.csstransitions #starting-js .slide {
+    visibility: visible;
+    opacity: 0;
+    -webkit-transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+    -moz-transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+    -ms-transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+    -o-transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+    transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+#starting-js .deck-current {
+    color: #444;
+}
+
+.csstransforms.csstransitions #starting-js .deck-current,
+.csstransforms.csstransitions #starting-js .deck-before,
+.csstransforms.csstransitions #starting-js .deck-previous {
+    opacity: 1;
+}
+
+footer#footer {
+    color: #000;
+    background-color: #E0E0E0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index:5;
+}
+
+footer#footer div#wrapper {
+    padding: 10px 20px;
+}
+
+section.slide.title {
+    /* color: #F60; */
+    /* background-color: #EAEFFA; */
+    background-color: #F60;
+
+}
+
+section.slide.title h1 {
+    color: #FFF;
+    font-variant: small-caps;
+    font-size: 8em;
+    line-height: 1em;
+}
+
+.deck-container section.slide h2 {
+    font-size: 4em;
+}
+
+section.slide ul {
+    list-style: none;
+    font-size: 2.8em;
+    margin:0;
+}
+
+.slide .mono {
+    font-family: monospace,sans-serif;
+}
+
+.deck-container section.code-size div.CodeMirror {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.deck-container section.code-size.closure-templates-example div.CodeMirror,
+.deck-container section.code-size.type-checking div.CodeMirror,
+.deck-container section.code-size.closure-templates-render div.CodeMirror,
+.deck-container section.code-size.closure-library-example div.CodeMirror{
+    font-size: 1.5em;
+}
+
+.deck-container section.code-size.closure-templates-example div.CodeMirror {
+    font-size: 1.4em;
+}
+
+.deck-container.on-slide-dead-code-used div.CodeMirror-lines > div > div > pre:nth-child(6),
+.deck-container.on-slide-dead-code-used div.CodeMirror-lines > div > div > pre:nth-child(7),
+.deck-container.on-slide-dead-code-used div.CodeMirror-lines > div > div > pre:nth-child(8),
+.deck-container.on-slide-dead-code-used div.CodeMirror-lines > div > div > pre:nth-child(9),
+.deck-container.on-slide-dead-code-all div.CodeMirror-lines > div > div > pre:nth-child(6),
+.deck-container.on-slide-dead-code-all div.CodeMirror-lines > div > div > pre:nth-child(7),
+.deck-container.on-slide-dead-code-all div.CodeMirror-lines > div > div > pre:nth-child(8),
+.deck-container.on-slide-dead-code-all div.CodeMirror-lines > div > div > pre:nth-child(9) {
+    background: rgba(0, 255, 0, 0.3);
+}
+
+.deck-container.on-slide-dead-code-all div.CodeMirror-lines > div > div > pre {
+    background: rgba(255, 0, 0, 0.3);
+}
+.orange {
+    color: #F60;
+}
+
+h1 .recap {
+    color: #FFF;
+    font-variant: small-caps;
+    font-size: 2em;
+}
+
+.slide.recap h1 {
+    color: #333;
+}
+
+h1.right {
+    text-align: right;
+}
+
+h1.left {
+    text-align: left;
+}
+
+.slide.recap {
+    background-color: #F60;
+}
+
+.csstransforms .slide h1,
+.csstransforms .slide .vcenter {
+    top: 40%;
+}
+
+.slide.cl-libraries span {
+    visibility: visible;
+    opacity: 0;
+    -webkit-transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+    -moz-transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+    -ms-transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+    -o-transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+    transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+div#cl-cloud {
+    text-align: justify;
+}
+
+div#cl-cloud span {
+    font-size: 4.5em;
+    color: #CCC;
+}
+
+.on-slide-cl-dom div#cl-cloud span.cloud-dom,
+.on-slide-cl-events div#cl-cloud span.cloud-dom,
+.on-slide-cl-storage div#cl-cloud span.cloud-dom,
+.on-slide-cl-positioning div#cl-cloud span.cloud-dom,
+.on-slide-cl-ui div#cl-cloud span.cloud-dom,
+.on-slide-cl-all div#cl-cloud span.cloud-dom,
+.on-slide-cl-events div#cl-cloud span.cloud-events,
+.on-slide-cl-storage div#cl-cloud span.cloud-events,
+.on-slide-cl-positioning div#cl-cloud span.cloud-events,
+.on-slide-cl-ui div#cl-cloud span.cloud-events,
+.on-slide-cl-all div#cl-cloud span.cloud-events,
+.on-slide-cl-storage div#cl-cloud span.cloud-positioning,
+.on-slide-cl-ui div#cl-cloud span.cloud-positioning,
+.on-slide-cl-all div#cl-cloud span.cloud-positioning,
+.on-slide-cl-storage div#cl-cloud span.cloud-storage,
+.on-slide-cl-all div#cl-cloud span.cloud-storage,
+.on-slide-cl-ui div#cl-cloud span.cloud-storage,
+.on-slide-cl-ui div#cl-cloud span.cloud-ui,
+.on-slide-cl-all div#cl-cloud span.cloud-ui,
+.on-slide-cl-positioning div#cl-cloud span.cloud-positioning {
+    visibility: visible;
+    color: #444;
+    opacity: 1;
+}
+
+.on-slide-cl-all div#cl-cloud span {
+    visibility: visible;
+    opacity: 1;
+}
+
+section.slide#smart-dev h1 {
+    top: 20%;
+}
+
+section.slide#smart-dev ul {
+    font-size: 4em;
+    margin-top: 10%;
+}
+
+section.slide#smart-dev ul li {
+    position: relative;
+    -webkit-transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+    -moz-transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+    -ms-transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+    -o-transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+    transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+section.slide#smart-dev span.filesize,
+section.slide#closure-reduction span.filesize {
+    display:block;
+    position:absolute;
+    right: 50px;
+    top: -20px;
+    font-size: 1.7em;
+    font-family: Georgia, sans-serif;
+}
+
+section.slide#smart-dev span.filesize.final {
+    font-size: 12em;
+    top: 60%;
+    position: absolute;
+    width: 100%
+}
+
+span.filesize.final {
+    opacity: 0;
+    -webkit-transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+    -moz-transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+    -ms-transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+    -o-transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+    transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.on-slide-gzip section.slide#smart-dev span.filesize.final {
+    text-align: center;
+    opacity: 1;
+}
+
+span.filesize.repeat {
+    font-family: Georgia, sans-serif;
+    font-size: 6em;
+top: 30%;
+position: absolute;
+width: 100%;
+text-align: center;
+}
+
+span.finalsize {
+    font-family: Georgia, sans-serif;
+    font-size: 2em;
+    text-align: center;
+display: block;
+color: #FFF;
+}
+
+.single {
+    background-color: #EAEFFA;
+}

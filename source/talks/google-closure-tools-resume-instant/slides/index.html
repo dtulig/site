@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+        <title>Google Closure Tools</title>
+	<meta name="viewport" content="width=1024, user-scalable=no">
+
+    <!-- deck.js's core css -->
+    <link href="deck.js/core/deck.core.css" rel="stylesheet" type="text/css"/>
+    <!-- deck.js extension CSS files -->
+    <link href="deck.js/extensions/navigation/deck.navigation.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/scale/deck.scale.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/codemirror/deck.codemirror.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/goto/deck.goto.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/status/deck.status.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/menu/deck.menu.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/hash/deck.hash.css" rel="stylesheet" type="text/css"/>
+    <!-- all css in the css dir: Keydown CSS, your custom CSS, and themes from deck.js -->
+    <link href="deck.js/themes/style/default.css" rel="stylesheet"
+    type="text/css"/>
+    <link href="deck.js/extensions/codemirror/codemirror.css" rel="stylesheet"
+    type="text/css"/>
+    <link href="deck.js/themes/transition/none.css" rel="stylesheet"
+    type="text/css"/>
+
+
+    <link href="css/google-closure-tools.css" rel="stylesheet" type="text/css"/>
+    <!-- Modernizr (provided for legacy browsers) -->
+    <script src="deck.js/modernizr.custom.js" type="text/javascript"></script>
+</head>
+<body class="deck-container">
+    <!-- Create any number of elements with class slide within the container -->
+    <section class="slide google-closure-tools" id="google-closure-tools">
+      <div class="content">
+        <h1 style="text-align: right;font-size: 4.7em;"><span class="orange">Google Closure</span>
+        Tools<br />Building <span class="orange">resume instant
+        search</span><br /><span style="font-size: 0.5em;line-height:0">David Tulig</span></h1>
+      </div>
+    </section>
+    <section class="slide me" id="me">
+      <h1 style="font-variant: small-caps;font-size: 7em;line-height:
+      0.7em;text-align: left;">david tulig<br /><span class="orange">software engineer</span><br />indeed.com</h1>
+    </section>
+    <section class="slide getting-ready title" id="getting-ready">
+      <div class="content">
+        <h1>ready to write an application</h1>
+      </div>
+    </section>
+    <section class="slide starting-js" id="starting-js">
+      <ul>
+        <li class="add-jquery mono">&lt;script
+          src=&quot;jquery-1.7.2.min.js&quot;
+          type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</li>
+        <li class="slide add-plugin mono" id="lightbox">&lt;script
+        src=&quot;jquery.lightbox.min.js&quot;
+        type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</li>
+        <li class="slide add-plugin mono" id="tablesort">&lt;script
+        src=&quot;jquery.tablesort.min.js&quot;
+        type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</li>
+        <li class="slide add-plugin mono" id="date-script">&lt;script
+        src=&quot;date.js&quot;
+        type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</li>
+        <li class="slide add-plugin mono" id="validation-script">&lt;script
+        src=&quot;validation.js&quot;
+        type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</li>
+        <li class="slide add-plugin mono" id="application">&lt;script src=&quot;application.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</li>
+      </ul>
+    </section>
+    <section class="slide dep-management single" id="dep-management">
+      <h1>Dependency management</h1>
+    </section>
+    <section class="slide poor-naming single" id="poor-naming">
+      <h1>No namespaces</h1>
+    </section>
+    <section class="slide string-concat code-size" id="string-concat">
+      <textarea class="code">
+var myTable = '';
+myTable += '<table id="myTable" cellspacing=0 cellpadding=2 border=1>';
+myTable += "<thead><tr>";
+for (var i = 0; i < t.hdrs.length; i++) {
+    myTable += "<th>" + header + "</th>";
+}
+myTable += "</tr></thead><tbody>" ;
+
+for (var i = 0; i < t.data.length; i++) {
+    myTable += '<tr>';
+    for (var j = 0; j < t.hdrs.length; j++) {
+        myTable += '<td>' + someData + '</td>';
+    }
+    myTable += "</tr>";
+}
+myTable += "</tbody></table>" ;
+
+$("#result").append(myTable) ;
+      </textarea>
+    </section>
+    <section class="slide js-templates code-size" id="js-templates">
+      <h2>jQuery templates</h2>
+      <textarea class="code">
+<script id="tmplPeople" type="text/x-jquery-tmpl">
+  <tr class="${alternate($data, people)}"><td colspan="2"><a href="${url}">${getName()}</a></td></tr>
+  {{each cities}}
+    <tr class="cityseparator"><td colspan="2"></td></tr>
+    <tr class="${alternate($data, people)}"><td colspan="2"><b><i>City ${index($value, cities)}:</i></b></td></tr>
+    <tr class="${alternate($data, people)}"><td><b>${name}</b></td><td>${state}</td></tr>
+  {{/each}}
+  <tr class="separator"><td colspan="2"></td></tr>
+</script>
+      </textarea>
+    </section>
+    <section class="slide smart-dev" id="smart-dev">
+      <ul>
+        <li class="slide combines mono"><span class="filesize">147K</span>application-combined.js</li>
+        <li class="slide compress mono"><span class="filesize">133K</span>application-compress.js</li>
+        <li class="slide gzip mono" id="gzip">gzip application-compress.js</li>
+      </ul>
+      <span class="filesize
+        final">45K</span>
+    </section>
+    <section class="slide jquery-recap recap" id="jquery-recap">
+      <h1 class="left"><span class="recap">recap</span><br />Dependency management<br/>Namespacing<br/>Poor template support<br />Write templates twice
+      </h1>
+    </section>
+    <section class="slide closure-templates title" id="closure-templates">
+      <h1>Closure Templates</h1>      
+    </section>
+    <section class="slide template-features single" id="template-features">
+      <h1>Presentation only</h1>
+    </section>
+    <section class="slide closure-templates-example code-size"
+             id="closure-templates-example">
+      <textarea class="code" mode="htmlmixed">
+{namespace indeed.rex.tmpl.serp}
+
+/**
+ * Renders a single block of refinements on the serp page
+ * @param title Title of the refinement
+ * @param refinements List of refinements
+ * @param? paramPrefix What to put before the params
+ * in the url (defaults to ?)
+ *
+ * @private
+ */
+{template .refinementBlock}
+  {if length($refinements) > 0}
+    <p class="refine_title">{$title}</p>
+    <ul class="refine_by">
+    {foreach $refinement in $refinements}
+      <li>
+        <a href="{$paramPrefix ? $paramPrefix : '?'}
+         {$refinement['addParams']}">
+          {$refinement['text']}
+        </a>
+        <span class="refine_count">{$refinement['count']}</span>
+      </li>
+    {/foreach}
+    </ul>
+  {/if}
+{/template}        
+      </textarea>
+    </section>
+
+    <section class="slide closure-library title" id="closure-library">
+      <h1>Closure Library</h1>
+    </section>
+    <section class="slide cl-previous-dep single" id="cl-previous-dep">
+      <h1>Dependency management</h1>
+    </section>
+    <section class="slide closure-library-depmgmt code-size" id="closure-library-depmgmt">
+      <div class="code" mode="javascript">
+goog.provide('indeed.rex.serp.Serp');
+
+goog.require('goog.History');
+goog.require('goog.Timer');
+goog.require('goog.Uri.QueryData');
+goog.require('goog.dom');
+goog.require('goog.events');
+      </div>
+    </section>
+    <section class="slide closure-library-example code-size"
+             id="closure-library-example">
+      <div class="code" mode="javascript">
+/**
+ * Runs the validation check.
+ * @param {string} text Text to validate.
+ * @return {boolean} True if the text is valid, false otherwise.
+ */
+indeed.validation.EmailRule.prototype.validate = function(text) {
+  var trimmedText = goog.string.trim(text);
+  return goog.string.isEmpty(trimmedText) ||
+    goog.format.EmailAddress.isValidAddrSpec(trimmedText);
+};
+      </div>
+    </section>
+    <section class="slide cl-libraries" id="cl-libraries">
+      <div id="cl-cloud">
+        <span class="cloud-hidden">array</span>
+        <span class="cloud-hidden">asserts</span>
+        <span class="cloud-hidden">async</span>
+        <span class="cloud-hidden">color</span>
+        <span class="cloud-hidden">crypt</span>
+        <span class="cloud-hidden">date</span>
+        <span class="cloud-hidden">disposable</span>
+        <span class="cloud-dom">dom</span>
+        <span class="cloud-hidden">editor</span>
+        <span class="cloud-events">events</span>
+        <span class="cloud-hidden">format</span>
+        <span class="cloud-hidden">functions</span>
+        <span class="cloud-hidden">fx</span>
+        <span class="cloud-hidden">gears</span>
+        <span class="cloud-hidden">graphics</span>
+        <span class="cloud-hidden">history</span>
+        <span class="cloud-hidden">i18n</span>
+        <span class="cloud-hidden">iter</span>
+        <span class="cloud-hidden">json</span>
+        <span class="cloud-hidden">locale</span>
+        <span class="cloud-hidden">math</span>
+        <span class="cloud-hidden">memoize</span>
+        <span class="cloud-hidden">net</span>
+        <span class="cloud-positioning">positioning</span>
+        <span class="cloud-hidden">proto</span>
+        <span class="cloud-hidden">soy</span>
+        <span class="cloud-storage">storage</span>
+        <span class="cloud-hidden">string</span>
+        <span class="cloud-hidden">style</span>
+        <span class="cloud-hidden">timer</span>
+        <span class="cloud-ui">ui</span>
+        <span class="cloud-hidden">uri</span>
+        <span class="cloud-hidden">useragent</span>
+      </div>
+      <div class="slide cl-dom" id="cl-dom"></div>
+      <div class="slide cl-events" id="cl-events"></div>
+      <div class="slide cl-positioning" id="cl-positioning"></div>
+      <div class="slide cl-storage" id="cl-storage"></div>
+      <div class="slide cl-ui" id="cl-ui"></div>
+      <div class="slide cl-all" id="cl-all"></div>
+    </section>
+    <section class="slide closure-library-unittest code-size"
+             id="closure-library-unittest">
+      <div class="code" mode="javascript">
+goog.require('goog.test.jsunit');
+goog.require('indeed.my.resume.Simple');
+
+var testSimpleToObject = function() {
+  var simple = new indeed.my.resume.Simple('test text');
+
+  var obj = simple.toObject();
+
+  assertEquals('test text', obj['text']);
+};
+      </div>
+    </section>
+    <section class="slide closure-library-unittest-run"
+             id="closure-library-unittest-run">
+      <img src="img/unittest_run.png" />
+    </section>
+    <section class="slide closure-library-unittest-all"
+             id="closure-library-unittest-all">
+      <img src="img/unittest_all.jpg" />
+    </section>
+    <section class="slide closure-library-recap recap"
+             id="closure-library-recap">
+      <h1 class="left"><span class="recap">recap</span><br/>
+      Templates separated from JS<br/>
+        Managed dependencies<br/>
+      Extensive libraries<br/>
+      Unit tests</h1>
+    </section>
+    <section class="slide closure-compiler title" id="closure-compiler">
+      <h1>Closure Compiler</h1>
+    </section>
+    <section class="slide closure-ecosystem" id="closure-ecosystem">
+      <img src="img/closure_ecosystem.png" alt="Closure" class="vcenter" />
+    </section>
+    <section class="slide advanced-optimizations single"
+             id="advanced-optimizations">
+      <h1 class="mono">ADVANCED_OPTIMIZATIONS</h1>
+    </section>
+
+    <section class="slide dead-code code-size" id="dead-code">
+      <div class="code" id="dead-code-block" mode="javascript">
+/** Alias for getElementById. If a DOM node is
+passed in then we just return */
+goog.dom.getElement = function(element) {...};
+
+/** Looks up elements by both tag and class name,
+using browser native functions */
+goog.dom.getElementsByTagNameAndClass = function(opt_tag,
+  opt_class, opt_el) {...};
+
+/** Returns an array of all the elements
+with the provided className. */
+goog.dom.getElementsByClass = function(className,
+  opt_el) {...};
+
+/** Returns the first element with the provided className. */
+goog.dom.getElementByClass = function(className, opt_el) {...};
+      </div>
+      <div class="slide dead-code-used" id="dead-code-used"></div>
+      <div class="slide dead-code-all" id="dead-code-all"></div>
+    </section>
+
+    <section class="slide type-checking code-size" id="type-checking">
+      <div>
+      <div class="code">
+/**
+ * Validates that the field is an email address.
+ * @param {string} id Id of the element the rule is for.
+ * @param {string=} opt_errorMessage Error message that should
+ * be displayed when the rule is violated.
+ * @constructor
+ * @extends {indeed.validation.Rule}
+ */
+      </div>
+      </div>
+      <div class="slide type-checking-example"
+      id="type-checking-example">
+        <div class="code">
+[exec] /static/scripts/app/indeed/rex/publicres/contact-form.js:36:
+       WARNING - actual parameter 2 of indeed.validation.EmailRule does
+       not match formal parameter
+[exec] found   : Node
+[exec] required: (string|undefined)
+[exec]     new indeed.validation.EmailRule('share_by_email_to',
+             invalidEmailMessage),
+             ^
+        </div>
+      </div>
+    </section>
+    <section class="slide closure-compiler-recap recap"
+       id="closure-compiler-recap">
+      <h1 class="left"><span class="recap">recap</span><br/>
+        Closure Compiler knows everything<br/>
+        Dead code removal<br/>
+        Type checking<br/></h1>
+    </section>
+    <section class="slide js-dev title" id="js-dev">
+      <h1>building resume instant search</h1>
+    </section>
+
+    <section class="slide app-res-search-home" id="app-res-search-home">
+      <!--<img src="img/resume_search_home.png" alt="Res-Search-Home"
+      class="valign" />-->
+      <video id="resume-search-video" allowFullScreen controls autoload width="100%" height="100%">
+        <source type="video/ogg; codecs=theora,vorbis" src="out-2.ogv">
+      </video>
+    </section>
+    <!--<section class="slide app-res-search" id="app-res-search">
+      <img src="img/resume_search_search.png" alt="Res-Search" class="valign" />
+    </section>
+    <section class="slide app-res-search-preview" id="app-res-search-preview">
+      <img src="img/resume_search_preview.png" alt="Res-Search-Preview" class="valign" />
+    </section>-->
+
+    <section class="slide autocomplete single" id="autocomplete">
+      <h1 class="left">Autocompleter<br/>
+      Instant<br/>
+      Preview<br/></h1>
+    </section>
+
+    <section class="slide tangled-2" id="tangled-2">
+      <img src="img/Tangled2.png" alt="Tangled" class="valign" />
+    </section>
+    <section class="slide tangled-3" id="tangled-3">
+      <img src="img/Tangled3.png" alt="Tangled" class="valign" />
+    </section>
+    <section class="slide tangled-4" id="tangled-4">
+      <img src="img/Tangled4.png" alt="Tangled" class="valign" />
+    </section>
+    <section class="slide tangled-5" id="tangled-5">
+      <img src="img/Tangled5.png" alt="Tangled" class="valign" />
+    </section>
+    <section class="slide tangled-6" id="tangled-6">
+      <img src="img/Tangled6.png" alt="Tangled" class="valign" />
+    </section>
+    <section class="slide tangled-7" id="tangled-7">
+      <img src="img/Tangled7.png" alt="Tangled" class="valign" />
+    </section>
+    <section class="slide tangled-8" id="tangled-8">
+      <img src="img/Tangled8.png" alt="Tangled" class="valign" />
+    </section>
+    <section class="slide tangled-9" id="tangled-9">
+      <img src="img/Tangled9.png" alt="Tangled" class="valign" />
+    </section>
+    <section class="slide tangled-10" id="tangled-10">
+      <img src="img/Tangled10.png" alt="Tangled" class="valign" />
+    </section>
+    <section class="slide tangled-11" id="tangled-11">
+      <img src="img/Tangled11.png" alt="Tangled" class="valign" />
+    </section>
+    <section class="slide tangled-12" id="tangled-12">
+      <img src="img/Tangled12.png" alt="Tangled" class="valign" />
+    </section>
+
+    <section class="slide event-driven single" id="event-driven">
+      <h1>Event driven</h1>
+    </section>
+    
+    <section class="slide app-structure" id="app-structure">
+      <img src="img/app_structure.png" alt="Structure" class="valign" />
+    </section>
+    
+    <section class="slide event-1" id="event-1">
+      <img src="img/event1.png" alt="Event" class="valign" />
+    </section>
+    <section class="slide event-2" id="event-2">
+      <img src="img/event2.png" alt="Event" class="valign" />
+    </section>
+    <section class="slide event-3" id="event-3">
+      <img src="img/event3.png" alt="Event" class="valign" />
+    </section>
+    <section class="slide event-4" id="event-4">
+      <img src="img/event4.png" alt="Event" class="valign" />
+    </section>
+    <section class="slide event-5" id="event-5">
+      <img src="img/event5.png" alt="Event" class="valign" />
+    </section>
+    <section class="slide event-6" id="event-6">
+      <img src="img/event6.png" alt="Event" class="valign" />
+    </section>
+    <section class="slide event-7" id="event-7">
+      <img src="img/event7.png" alt="Event" class="valign" />
+    </section>
+
+    <section class="slide app-structure-2" id="app-structure-2">
+      <img src="img/app_structure.png" alt="Structure" class="valign" />
+    </section>
+    
+    <section class="slide server-templates single" id="server-templates">
+      <h1>Server side / Client side<br/>templates</h1>
+    </section>
+    <section class="slide closure-templates-render code-size"
+      id="closure-templates-render">
+      <div>
+        <textarea class="code" mode="javascript">
+/**
+ * Renders a serp result
+ */
+{template .results} ... {/template}
+        </textarea>
+      </div>
+      <div class="slide closure-templates-java" id="closure-templates-java">
+        <div>
+          <textarea class="code" mode="text/x-java">
+SoyFileSet sfs = new SoyFileSet.Builder()
+                   .add(new File("serp.soy")).build();
+
+SoyTofu tofu = sfs.compileToJavaObj();
+
+System.out.println(tofu.newRenderer(
+                    "indeed.resume.serp.results").render());
+          </textarea>
+        </div>
+      </div>
+      <div class="slide closure-templates-js"
+                    id="closure-templates-js">
+        <div>
+          <textarea class="code" mode="javascript">
+goog.require('indeed.resume.serp');
+
+goog.soy.renderElement(document.body,
+                       indeed.resume.serp.results);
+          </textarea>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide closure-twitter-eng" id="closure-twitter-eng">
+      <img src="img/twitter_eng.png" alt="Closure" class="vcenter" />
+    </section>
+    
+    <section class="slide closure-templates-recap recap"
+       id="closure-templates-recap">
+      <h1 class="left"><span class="recap">recap</span><br/>
+        Event driven<br/>
+        Independent components<br/>
+        Write templates once
+      </h1>
+    </section>
+
+    <section class="slide large-filesize" id="large-filesize">
+      <ul>
+        <li class="add-jquery mono">&lt;script
+          src=&quot;application-compressed.js&quot;
+          type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</li>
+      <span class="filesize
+        repeat">45K</span>
+    </section>
+
+    <section class="slide closure-reduction"
+             id="closure-reduction">
+      <ul>
+        <li class="whitespace mono"
+            style="position:relative"><span class="filesize">481K</span>WHITESPACE_ONLY</li>
+        <li class="whitespace mono"
+        style="position:relative"><span class="filesize">105K</span>gzip
+        WHITESPACE_ONLY</li>
+        <li>&nbsp;</li>
+        <li class="simple mono" style="position:
+        relative;"><span class="filesize">381K</span>SIMPLE_OPTIMIZATIONS</li>
+        <li class="simple mono" style="position:
+        relative;"><span class="filesize">90K</span>gzip SIMPLE_OPTIMIZATIONS</li>
+      </ul>
+    </section>
+
+    <section class="slide closure-compiled recap" id="closure-compiled">
+      <h1 class="left"><span class="recap">compiled</span><br/>
+        Dead code removed<br/>
+        Type checking<br/>
+        <span class="finalsize">41K</span>
+      </h1>
+    </section>
+
+    <section class="slide closure-job-search single" id="closure-job-search">
+      <h1>Job Search: 41k to 35k</h1>
+    </section>
+    
+    <section class="slide getting-started" id="getting-started">
+      <h1>Get started on Google's site<br/><span class="orange"
+      style="font-size:0.7em;">https://developers.google.com/closure/</span>
+        <br/><br/></h1>
+    </section>
+
+    <section class="slide questions" id="questions">
+      <h1 class="right"><span class="orange">davidtulig</span>.com<br />twitter:
+      @<span class="orange">dtulig</span><br />indeed.com/resumes</h1>
+    </section>
+    <footer id="footer">
+      <div id="wrapper">
+        <img src="img/indeed_slides.png" alt="Indeed.com" />
+      </div>
+    </footer>
+<!-- Other extension HTML snippets go here, at the bottom of the deck container. -->
+
+    <!-- jQuery & deck.js -->
+    <script src="deck.js/jquery-1.7.min.js" type="text/javascript"></script>
+    <script src="deck.js/core/deck.core.js" type="text/javascript"></script>
+    <!-- deck.js extension JS files -->
+    <script src="deck.js/extensions/navigation/deck.navigation.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/scale/deck.scale.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/codemirror.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/xml/xml.js" type="text/javascript"></script>
+    <!-- <script src="deck.js/extensions/codemirror/mode/php/php.js" type="text/javascript"></script> -->
+    <!-- <script src="deck.js/extensions/codemirror/mode/sparql/sparql.js" type="text/javascript"></script> -->
+    <!-- <script src="deck.js/extensions/codemirror/mode/velocity/velocity.js" type="text/javascript"></script> -->
+    <!-- <script src="deck.js/extensions/codemirror/mode/haskell/haskell.js" type="text/javascript"></script> -->
+    <script src="deck.js/extensions/codemirror/mode/javascript/javascript.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/htmlmixed/htmlmixed.js" type="text/javascript"></script>
+    <!-- <script src="deck.js/extensions/codemirror/mode/smalltalk/smalltalk.js" type="text/javascript"></script> -->
+    <!-- <script src="deck.js/extensions/codemirror/mode/stex/stex.js" type="text/javascript"></script> -->
+    <!-- <script src="deck.js/extensions/codemirror/mode/yaml/yaml.js" type="text/javascript"></script> -->
+    <!-- <script src="deck.js/extensions/codemirror/mode/clojure/clojure.js" type="text/javascript"></script> -->
+    <script src="deck.js/extensions/codemirror/mode/clike/clike.js" type="text/javascript"></script>
+    <!-- <script src="deck.js/extensions/codemirror/mode/diff/diff.js" type="text/javascript"></script> -->
+    <script src="deck.js/extensions/codemirror/mode/css/css.js" type="text/javascript"></script>
+    <!-- <script src="deck.js/extensions/codemirror/mode/python/python.js" type="text/javascript"></script> -->
+    <!-- <script src="deck.js/extensions/codemirror/mode/scheme/scheme.js" type="text/javascript"></script> -->
+    <!-- <script src="deck.js/extensions/codemirror/mode/ruby/ruby.js" type="text/javascript"></script> -->
+    <!-- <script src="deck.js/extensions/codemirror/mode/xmlpure/xmlpure.js" type="text/javascript"></script> -->
+    <!-- <script src="deck.js/extensions/codemirror/mode/r/r.js" type="text/javascript"></script> -->
+    <!-- <script src="deck.js/extensions/codemirror/mode/plsql/plsql.js" type="text/javascript"></script> -->
+    <!-- <script src="deck.js/extensions/codemirror/mode/coffeescript/coffeescript.js" type="text/javascript"></script> -->
+    <!-- <script src="deck.js/extensions/codemirror/mode/lua/lua.js" type="text/javascript"></script> -->
+    <script src="deck.js/extensions/codemirror/mode/jinja2/jinja2.js"
+    type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/deck.codemirror.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/goto/deck.goto.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/status/deck.status.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/menu/deck.menu.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/hash/deck.hash.js" type="text/javascript"></script>
+    <!-- your custom JS here, including call to initialize deck.js-codemirror -->
+    <script src="js/google-closure-tools.js" type="text/javascript"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+</body>
+</html>

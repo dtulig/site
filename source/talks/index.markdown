@@ -7,8 +7,6 @@ footer: true
 ---
 ## [Google Closure Tools: Building Resume Instant Search](/talks/google-closure-tools-resume-instant/slides/)
 
-*These slides work best in Google Chrome*
-
 This talk will start by going over the components of the Google
 Closure Tools and will cover the templates, which are usable on both
 the client and server, the library, which comes with a dependency

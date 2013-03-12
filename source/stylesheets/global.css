@@ -60,6 +60,8 @@ article > footer {
 div#content article > footer p.meta {
     margin-bottom: .8em;
     font-size: .85em;
+    clear: both;
+    overflow: hidden;
 }
 
 p.meta + .sharing {
@@ -100,4 +102,12 @@ aside > section.googleplus {
 aside > section.googleplus h1,
 aside > section.linkedin h1 {
     font-size: 15px;
+}
+
+.basic-alignment.right {
+    float: right;
+}
+
+.basic-alignment.left {
+    float: left;
 }

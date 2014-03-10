@@ -5,6 +5,12 @@ comments: false
 sharing: true
 footer: true
 ---
+## [Building Indeed Resume Search](/talks/building-indeed-resume-search)
+
+I dive into the architecture of Indeed’s Resume Instant Search and our use of the Google Closure tools. I explain how we write maintainable, efficient JavaScript components for Resume Instant Search and other Indeed products. I discuss how we create templates that run on both client and server, providing fast initial page load time and search engine-friendly pages with the responsiveness of client-side rendering.
+
+*May 8, 2013* - [@IndeedEng](http://engineering.indeed.com/blog/2013/05/may-indeedeng-talk/)
+
 ## [Google Closure Tools: Building Resume Instant Search](/talks/google-closure-tools-resume-instant/slides/)
 
 This talk will start by going over the components of the Google

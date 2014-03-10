@@ -1,6 +1,7 @@
 --- 
 layout: post
 title: JavaScript Error Logging
+date: 2010-10-15
 published: true
 ---
 <p>A useful technique that I have been using to help keep track of JavaScript errors has been to use the <code>OnError</code> event to help log client side errors that slip through the testing process. In addition to the properties that come with the JavaScript exception (the error message, the url of the script, and the line number) I log the url of the page that they were on when the problem occurred which makes reproducing the situation much easier. Another nice little benefit of catching errors through my own callback is being able to suppress the error message from the user, in some browsers this can be as invasive as a popup (IE). On to some code.</p>
